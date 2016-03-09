@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.uestc.hams.entity">
+
+	<class name="HospitalHistory" table="hams_hospitalHistory">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="inHospital" />
+		<property name="outHospital" />
+		<property name="inHosReason" />
+		<property name="hospitalName" />
+		<property name="recordNumber" />
+		<!-- phyExam属性 本类与 PhyExam关系为多对一-->
+		<many-to-one name="phyExam" class="PhyExam" column="phyExamHosId" lazy="false" cascade="save-update,persist"></many-to-one>
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.uestc.hams.entity">
+       <class name="Family" table="hams_family" >
+       <id name="id" >
+        <generator class="native"></generator>
+       </id>
+       
+       <property name="medicalInsNo" type="java.lang.Long"></property>
+       <property name="medicalNo" type="java.lang.Long"></property>
+       <property name="postalCode" type="java.lang.String"></property>
+       <property name="careerPopu" type="java.lang.String"></property>
+       <property name="financialSitu" type="java.lang.String"></property>
+        <property name="address" type="java.lang.String"></property>
+         <property name="phoneNo" type="java.lang.Long"></property>
+          <property name="registerDate" type="date"></property>
+          <property name="headIdNO" type="java.lang.Long" unique="true"></property> 
+          <property name="familyPopu" type="java.lang.String"></property>
+          
+       <property name="remarks" type="java.lang.String"></property>
+         <property name="childrenPopu" type="java.lang.String"></property>
+       <property name="occupiedAged" type="java.lang.String"></property> 
+        <property name="property" type="java.lang.String"></property> 
+       <property name="lxw" type="java.lang.String"></property>
+       <property name="averageLxw" type="java.lang.String"></property>
+       <property name="housePro" type="java.lang.String"></property>
+       <property name="security" type="java.lang.String"></property>
+       <property name="toPolice" type="java.lang.Float"></property>
+       <property name="toSchool" type="java.lang.Float"></property> 
+        <property name="toRoad" type="java.lang.Float"></property>
+       <property name="toHospital" type="java.lang.Float"></property>
+       <property name="toShop" type="java.lang.Float"></property>
+       <property name="wentilate" type="java.lang.String"></property>
+       <property name="humidity" type="java.lang.String"></property>
+       <property name="warmth" type="java.lang.String"></property>
+       <property name="brightness" type="java.lang.String"></property>
+       <property name="sanitation" type="java.lang.String"></property>
+       <property name="kitchenMethod" type="java.lang.String"></property>
+       <property name="kitchenExhaust" type="java.lang.String"></property>
+       <property name="kitchenFuel" type="java.lang.String"></property>
+       <property name="dw" type="java.lang.String"></property>
+       <property name="animalsField" type="java.lang.String"></property> 
+       <property name="rubbishDispose" type="java.lang.String"></property> 
+       <property name="toilet" type="java.lang.String"></property>
+       <property name="appliances" type="java.lang.String"></property>
+       <property name="vehicle" type="java.lang.String"></property> 
+       
+       
+       <!-- 家庭户主head属性跟user为一对一映射关系 -->
+      <many-to-one name="head" class="ResidentArchive"  column="headId" ></many-to-one> 
+      
+       <!--  register属性跟User为多对一关系,列名为registerId-->
+       <many-to-one name="register" class="User" column="registerId" ></many-to-one>
+       
+       <!--  集合member属性与user为一对多映射 列名为memberId -->
+         <set name="member" inverse="true" lazy="false" cascade="all">  
+         <key column="familyId" not-null="false"> 
+        </key>   
+     <one-to-many class="ResidentArchive"/> 
+        </set>  
+       
+       <!--  doctor属性与User为多对一关系 列名为doctoreId -->
+       <many-to-one name="doctor"   class="User" column="doctorId" ></many-to-one>
+       
+       <!--  issue属性 ，本类与FamilyIssue为一对多关系 -->
+       <set name="issue" > 
+      <key column="familyId" ></key>
+      <one-to-many class="FamilyIssue"/>  </set>
+       
+       <!--  evaluate属性，本类与FamilyCategoryEvaluate为一对多关系 -->
+        <set name="evaluate"> 
+      <key column="familyId"></key> 
+      <one-to-many class="FamilyCategoryEvaluate"/> </set> 
+      
+       
+       </class>
+       </hibernate-mapping>

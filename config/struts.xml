@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 配置为开发模式：不用重新发布 -->
+    <constant name="struts.devMode" value="false" />
+	<!-- 把扩展名配置为.action -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="true" /> -->
+	<!-- 把主题配置为simple -->
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.convention.result.path" value="/" />
+    <constant name="struts.convention.package.locators" value="action,framelist" />
+    <package name="default" namespace="/" extends="json-default" > 
+    
+    
+      <interceptors>
+      	<!-- 声明一个拦截器 -->
+      	<interceptor name="checkPrivilege" class="com.uestc.hams.util.CheckPrivilegeInterceptor"></interceptor>
+      	<!-- 重新定义默认拦截器栈，将checkPrivilege放在最前面 -->
+      	<interceptor-stack name="defaultStack">
+    			<interceptor-ref name="checkPrivilege"></interceptor-ref>
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    	</interceptor-stack>      </interceptors>
+      <global-results>
+      	<result name="loginUI">/WEB-INF/jsp/userAction/loginUI.jsp</result>
+      	<result name="noPrivilegeError">/noPrivilegeError.jsp</result>
+      </global-results>	
+    
+      <!-- 当struts2与spring整合后,class属性写类的名称 -->
+      <!-- 配置测试用的Action（还未与Spring整合）class写类的全名 -->
+      <action name="test" class="com.uestc.hams.test.TestAction">
+    		<result name="success">/test.jsp</result>
+      </action>
+	<action name="role_*" class="roleAction" method="{1}">
+		<result name="list">/WEB-INF/jsp/roleAction/list.jsp</result>
+		<result name="saveUI">/WEB-INF/jsp/roleAction/saveUI.jsp</result>
+		<result name="toList" type="redirectAction">role_list</result>
+		<result name="setPrivilegeUI">/WEB-INF/jsp/roleAction/setPrivilegeUI.jsp</result>
+	</action>
+    
+    <!-- 用户管理 -->
+    <action name="user_*" class="userAction" method="{1}">
+    	<result name="list">/WEB-INF/jsp/userAction/list.jsp</result>
+    	<result name="saveUI">/WEB-INF/jsp/userAction/saveUI.jsp</result>
+    	<result name="logout">/WEB-INF/jsp/userAction/logout.jsp</result>
+    	<result name="toIndex" type="redirect">index.jsp</result>
+    	<result name="toList" type="redirectAction">user_list</result>
+    </action> 
+    
+    <!-- 地区机构管理 -->
+    <action name="districtIns_*" class="districtInsAction" method="{1}">
+    	<result name="list">/WEB-INF/jsp/districtInsAction/list.jsp</result>
+    	<result name="saveUI">/WEB-INF/jsp/districtInsAction/saveUI.jsp</result>
+   		<result name="toList" type="redirectAction">districtIns_list?parentId=${parentId}</result>
+    </action>
+    
+    <!-- 首页 -->
+    <action name="home_*" class="homeAction" method="{1}">
+    	<result name="index">/WEB-INF/jsp/homeAction/index.jsp</result>
+    	<result name="left">/WEB-INF/jsp/homeAction/left.jsp</result>
+    	<result name="right">/WEB-INF/jsp/homeAction/right.jsp</result>
+    	<result name="top">/WEB-INF/jsp/homeAction/top.jsp</result>
+    	<result name="bottom">/WEB-INF/jsp/homeAction/bottom.jsp</result>
+    </action>
+    
+    <!-- 健康档案管理	<result name="success">/WEB-INF/jsp/residentArchiveAction/test.jsp</result> -->
+    <action name="archive_*" class="residentArchiveAction" method="{1}">
+    	<result name="list">/WEB-INF/jsp/residentArchiveAction/list.jsp</result>
+    	<result name="saveUI">/WEB-INF/jsp/residentArchiveAction/saveUI.jsp</result>
+   		<result name="toList" type="redirectAction">archive_doctorArchiveList</result>
+   		<result name="doctorArchiveList">/WEB-INF/jsp/residentArchiveAction/doctorArchiveList.jsp</result>
+   		<result name="hypertensionArchiveList">/WEB-INF/jsp/residentArchiveAction/hypertensionArchiveList.jsp</result>
+   		<result name="success" type="json">
+   			<param name="root">flag</param>
+   		</result>
+   			
+    </action>
+    
+    <action name="phyExam_*" class="phyExamAction" method="{1}">
+    	<!-- 设置页容量,即每页显示的记录条数 -->
+    	<param name="pageSize">2</param>
+    	<result name="list">/WEB-INF/jsp/phyExam/list.jsp</result> 
+    	<result name="saveUI">/WEB-INF/jsp/phyExam/saveUI.jsp</result>
+    	<result name="editUI">/WEB-INF/jsp/phyExam/editUI.jsp</result>
+    	<result name="toList" type="redirectAction">phyExam_archiveList?page=${page}&amp;rsaId=${rsaId}</result>
+    </action>
+    
+      <!--  by yang -->
+    <action name="family_*" class="com.uestc.hams.view.action.FamilyAction" method="{1}">
+         <result name="listUI">/WEB-INF/jsp/familyAction/list.jsp</result>
+         <result name="saveUI">/WEB-INF/jsp/familyAction/saveUI.jsp</result>
+         <result name="toList" type="redirectAction">family_list</result> 
+         <result name="toFamilyInfo" type="redirectAction">family_info?id=${famId}</result>
+         <result name="memberAddUI">/WEB-INF/jsp/familyAction/memberAddUI.jsp</result>
+         <result name="showFamilyInfoUI">/WEB-INF/jsp/familyAction/familyInfo.jsp</result>
+         <result name="inputAddMemberUI" type="redirectAction">family_memberAddUI?id=${famId}</result>
+         
+         <result name="test">/WEB-INF/jsp/familyAction/AjaxJson.jsp</result>
+         <result name="returnResident" type="json">
+         <param name="root">resident</param>  
+         </result>
+         
+    </action>
+    
+    <action name="json_*" class="com.uestc.hams.view.action.FamilyAction" method="{1}">
+       <result name="message" type="json"></result>
+       <result name="returnResident"  type="json"></result>
+    </action>
+    
+    <action name="bloodPressure_*" class="com.uestc.hams.view.action.BloodPressureAction" method="{1}">
+    	<result name="list">/WEB-INF/jsp/bloodPressure/list.jsp</result>
+    	<result name="saveUI">/WEB-INF/jsp/bloodPressure/saveUI.jsp</result>
+    	<result name="toList" type="redirectAction">bloodPressure_list</result>
+    	<result name="waveUI">/WEB-INF/jsp/bloodPressure/waveUI.jsp</result>
+    	<result name="showWave">/WEB-INF/jsp/bloodPressure/wave2.jsp</result>
+    	<result name="wave" type="json">
+    		<param name="root">showJsonArray</param>
+    	</result>    	
+    </action>
+    
+    <action name="messageText_*" class="com.uestc.hams.view.action.MessageTextAction" method="{1}"> 
+    	<result name="homeUI">/WEB-INF/jsp/message/homeUI.jsp?roleFlag=${roleFlag}</result>  	
+    	<result name="saveUI">/WEB-INF/jsp/message/saveUI.jsp</result>
+    	<result name="addSucc">/WEB-INF/jsp/message/addTest.jsp</result>
+    	<result name="receiveList">/WEB-INF/jsp/message/receiveList.jsp</result>
+    	<result name="sendList">/WEB-INF/jsp/message/sendList.jsp</result>
+    	<result name="receiveDetailInfoUI">/WEB-INF/jsp/message/receiveMessageInfo.jsp</result>
+    	<result name="sendDetailInfoUI">/WEB-INF/jsp/message/sendMessageInfo.jsp</result>
+    	<result name="replyUI">/WEB-INF/jsp/message/replyUI.jsp</result> 
+    	<result name="input">/WEB-INF/jsp/message/error.jsp</result> 	   	
+    </action>
+    
+    </package>
+
+  
+
+</struts>

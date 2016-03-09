@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+ 
+ <!--  author: yang -->
+          <hibernate-mapping package="com.uestc.hams.entity">
+          <class name="FamilyCategoryEvaluate" table="hams_familyCategoryEvaluate">
+              <id name="id">
+          <generator class="native"></generator></id>
+          <property name="category"></property>
+          <property name="evaluateDate"></property>
+          <property name="remarks"></property>
+          
+          <!--  family属性，本类与Family为多对一映射关系 -->
+<!--           <many-to-one name="family" class="Family" column="familyId"></many-to-one> -->
+          
+          <!-- doctor属性，本类与User为多对一映射关系 -->
+          <many-to-one name="doctor" class="User" column="doctorId"></many-to-one>
+          
+          </class>
+      
+          
+          </hibernate-mapping>

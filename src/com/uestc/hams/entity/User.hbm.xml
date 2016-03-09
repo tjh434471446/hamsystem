@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.uestc.hams.entity">
+
+	<class name="User" table="hams_user">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="loginName" />
+		<property name="password" />
+		<property name="name" />
+		<property name="gender" />
+		<property name="phoneNumber" />
+		<property name="email" />
+		<property name="description" />
+		
+		<!--roles属性，本类与Role的关系是 多对多  -->
+		<set name="roles" table="hams_user_role" lazy="false">
+			<key column="userId"></key>
+			<many-to-many class="Role" column="roleId"></many-to-many>		
+	</set>
+		
+		
+		<!-- districtIns属性，本类与DistrictIns关系 多对一 -->
+		<many-to-one name="districtIns" class="DistrictIns" column="districtInsId" ></many-to-one>
+		
+		<!-- residentArchive属性，本类与ResidentArchive关系为一对一 -->
+		<many-to-one name="residentArchive" class="ResidentArchive" column="residentArchiveId" cascade="delete"></many-to-one>
+		
+		<!-- doctorArchives属性,本类与ResidentArchive 为一对多 -->
+		<set name="doctorArchives" lazy="false">
+			<key column="doctorId"></key>
+			<one-to-many class="ResidentArchive"/>
+		</set>
+		<!-- recorderArchives属性,本类与ResidentArchive 为一对多 -->
+		<set name="recorderArchives" lazy="false" >
+			<key column="recorderId"></key>
+			<one-to-many class="ResidentArchive"/>
+		</set>
+		
+	</class>
+	
+</hibernate-mapping>

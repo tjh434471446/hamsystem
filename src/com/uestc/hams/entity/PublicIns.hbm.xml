@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.uestc.hams.entity">
+
+	<class name="PublicIns" table="hams_publicIns">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="name" />
+		<property name="info"></property>
+		<!-- rsBloodTran属性 本类与 ResidentArchive关系为多对一-->
+		<many-to-one name="rsBloodTran" class="ResidentArchive" column="rsBloodTranId" lazy="false"></many-to-one>
+	</class>
+	
+</hibernate-mapping>

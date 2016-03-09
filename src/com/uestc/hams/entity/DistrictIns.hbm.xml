@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.uestc.hams.entity">
+
+	<class name="DistrictIns" table="hams_districtIns">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="name" />
+		<property name="address"></property>
+		<property name="description" />
+		<property name="districtId"></property>
+		
+		<!--parent属性 本类(指带有parent属性的类)与DistrictIns的关系 多对一-->
+		<many-to-one name="parent" class="DistrictIns" column="parentId"></many-to-one>
+		
+		
+		<!-- children属性 本类(指带有children属性的类)与DistrictIns的关系是 一对多 -->
+		<!--  cascade="delete"代表级联配置删除，主对象parent删除时，从对象也进行删除 -->
+		<!-- set具有order-by属性指的是sql语句orderby字句类型 -->
+		<set name="children" cascade="delete" order-by="id ASC">
+			<key column="parentId"></key>
+			<one-to-many class="DistrictIns"/>
+		</set>
+		
+		<!-- users属性 本类与User的关系为 一对多 -->
+		<set name="users">
+			<key column="districtInsId"></key>
+			<one-to-many class="User"/>
+		</set>
+		
+		<!-- residentArchives属性，本类与ResidentArchive 关系为一对多 -->
+		<set name="residentArchives">
+			<key column="districtInsId"></key>
+			<one-to-many class="ResidentArchive"/>
+		</set>
+	</class>
+	
+</hibernate-mapping>

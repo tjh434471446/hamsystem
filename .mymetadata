@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="hamSystem"
+  id="myeclipse.1405000453192"
+  context-root="/hamSystem"
+  j2ee-spec="5.0"
+  archive="hamSystem.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

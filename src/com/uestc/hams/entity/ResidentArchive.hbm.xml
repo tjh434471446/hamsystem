@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.uestc.hams.entity">
+
+	<class name="ResidentArchive" table="hams_residentArchive">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="rsArchiveId" />
+		<property name="addressId" />
+		<property name="committee" />
+		<property name="rsId" />
+		<property name="workAddr" />
+		<property name="linkManName" />
+		<property name="achiveDate" type="date" />
+		<property name="rsBornDate" type="date"/>
+		
+		
+		<property name="nowAdr" />
+		<property name="streetDisString" />
+		<property name="archiveDisId" />
+		<property name="linkManPhoneNum" />
+		<property name="nationality" />
+		<property name="nationalityString" />
+		
+		<property name="livingType" />
+		<property name="workingType" />
+		<property name="marriageType" />
+		<property name="bloodType" />
+		<property name="rhType" />
+		<property name="educateType" />
+		
+		<property name="residentId"></property>
+		<property name="name" />
+		<property name="gender" />
+		<property name="phoneNumber" />
+		<property name="loginName" />
+		<property name="paperRecorder" />
+		<property name="age"></property>
+		
+		<property name="exposureType"></property>
+		<property name="exposureString" />
+		<property name="heredityType" />
+		<property name="heredityString" />
+		<property name="drugAllergyType" />
+		<property name="drugAllergyString" />
+		
+		<property name="payType" />
+		<property name="payTypeString" />
+		
+		<property name="bloodTransType"></property>
+		<property name="bloodTranString"></property>
+		<property name="surgeryType"></property>
+		<property name="surgeryString"></property>
+		<property name="traumasType"></property>
+		<property name="traumasString"></property>
+		
+		
+		
+		<property name="diseaseType"></property>
+		<property name="diseaseString"></property>
+		<property name="diseaseCancerString"></property>
+		<property name="diseaseOccupString"></property>
+		<property name="diseaseOtherString"></property>
+		
+		<property name="monDiseaseType"></property>
+		<property name="monDiseaseString"></property>
+		<property name="monDiseaseCancerString"></property>
+		<property name="monDiseaseOccupString"></property>
+		<property name="monDiseaseOtherString"></property>
+		
+		<property name="faDiseaseType"></property>
+		<property name="faDiseaseString"></property>
+		<property name="faDiseaseCancerString"></property>
+		<property name="faDiseaseOccupString"></property>
+		<property name="faDiseaseOtherString"></property>
+		
+		<property name="broDiseaseType"></property>
+		<property name="broDiseaseString"></property>
+		<property name="broDiseaseCancerString"></property>
+		<property name="broDiseaseOccupString"></property>
+		<property name="broDiseaseOtherString"></property>
+		
+		<property name="childDiseaseType"></property>
+		<property name="childDiseaseString"></property>
+		<property name="childDiseaseCancerString"></property>
+		<property name="childDiseaseOccupString"></property>
+		<property name="childDiseaseOtherString"></property>
+		
+		<property name="disabledType"></property>
+		<property name="disabledString"></property>
+		<property name="disabledOhterString"></property>
+		
+		<property name="kitchenEquiType"></property>
+		<property name="fuelType"></property>
+		<property name="waterType"></property>
+		<property name="wcType"></property>
+		<property name="animalType"></property>
+		
+		<!-- districtIns属性，本类与DistrictIns 关系为 多对一 -->
+		<many-to-one name="districtIns" class="DistrictIns" column="districtInsId"></many-to-one>
+		
+		
+		<!-- doctor属性，本类与User的关系为多对一 -->
+		<many-to-one name="doctor" class="User" column="doctorId" ></many-to-one>
+		<!-- recorder属性，本类与User的关系为多对一 -->
+		<many-to-one name="recorder" class="User" column="recorderId"></many-to-one>
+		
+		<!-- bloodTrans属性，本类与PublicIns的关系为一对多 -->
+		<set name="bloodTrans" lazy="false">
+			<key column="rsBloodTranId"></key>
+			<one-to-many class="PublicIns"/>
+		</set>
+		
+			<!--  by yang -->
+		<!--  family属性与Family类为多对一关联 -->
+		<many-to-one name="family" class="Family" column="familyId" insert="true" 
+		   update="true" ></many-to-one>
+		<property name="relationShip" type="java.lang.String"></property>
+		
+	</class>
+	
+</hibernate-mapping>

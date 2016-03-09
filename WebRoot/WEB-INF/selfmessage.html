@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>个人基本信息表</title>
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/yunzhu_style/jscal2/css/jscal2.css" /> 
+   <link rel="stylesheet" type="text/css" href="style/yunzhu_style/jscal2/css/border-radius.css" /> 
+   <link rel="stylesheet" type="text/css" href="style/yunzhu_style/jscal2/css/gold/gold.css" /> 
+   <script type="text/javascript" src="script/yunzhu_js/jscal2.js"></script> 
+   <script type="text/javascript" src="script/yunzhu_js/lang/en.js"></script>
+	<script src="js/selfmessage.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--信息表的头部-->
+<div class="message-head">
+<span>姓名：</span><span>性别：</span><span>出生日期：</span><span>年龄：</span><span>责任医生：</span><span>疾病史：</span>
+</div>
+<div class="container">
+<!--表格-->
+<form>
+<table class="table mtable table-bordered">
+<thead>
+<tr>
+<td colspan="3" class="tbhead">基本信息</td></tr></thead>
+<tbody>
+<tr>
+    <td rowspan="7">照片</td>
+  </tr>
+  <tr>
+    <td><div class="pdl">姓名：</div><div class="pdr"><input type="text" name=""><span class="rpoint">*</span>(<a href="#">查询</a>)</div></td>
+    <td><div class="pdl">拼音码：</div><div class="pdr"><input type="text" name=""></div></td>
+  </tr>
+  <tr>
+    <td><div class="pdl">乡镇街道：</div><div class="pdr"><input type="text" name="">(<a href="#">选择</a>)</div></td>
+    <td><div class="pdl"><span class="redc">村居委会*</span>：</div><div class="pdr"><input type="text" name=""></div></td>
+  </tr>
+    <tr>
+    <td><div class="pdl">现住址：</div><div class="pdr"><input type="text" name=""></div></td>
+    <td><div class="pdl">联系电话：</div><div class="pdr"><input type="text" name=""></div></td>
+  </tr>
+  <tr>
+    <td><div class="pdl">户籍地址：</div><div class="pdr"><input type="text" name=""></div></td>
+    <td><div class="pdl">责任医生：</div><div class="pdr"><select><option>机构管理员</option><option>机构管理员</option><option>机构管理员</option></select></div></td>
+  </tr>
+    <tr>
+    <td><div class="pdl">档案状态<span class="rpoint">*</span>：</div><div class="pdr"><select><option>活动</option><option>活动</option><option>活动</option></select></div></td>
+    <td><div class="pdl">建档人：</div><div class="pdr"><input type="text" name="" placeholder="机构管理员"></div></td>
+  </tr>
+  <tr>
+    <td><div class="pdl">建档日期：</div><div class="pdr"><input type="text" name="" placeholder="2011-10-24"></div></td>
+    <td><div class="pdl">当前管理机构：</div><div class="pdr"></div></td>
+  </tr>
+  </tbody>
+</table>
+<table class="table mtable table-bordered">
+<thead>
+<tr>
+<td colspan="3" class="tbhead">档案信息</td></tr></thead>
+<tbody>
+<tr>
+    <td><div class="pdl">档案ID：</div><div class="pdr"></div></td>
+    <td><div class="pdl">性别：</div><div class="pdr"><select><option>男</option><option>女</option></select></div></td>
+	<td><div class="pdl"><span class="rpoint">身份证号*</span>：</div><div class="pdr"><input type="text" name=""></div></td>
+  </tr>
+  <tr>
+    <td><div class="pdl"><span class="rpoint">出生日期*</span>：</div><div class="pdr"><input type="text" name=""></div></td>
+    <td><div class="pdl">工作单位：</div><div class="pdr"><input type="text" name=""></div></td>
+	<td><div class="pdl">联系人姓名：</div><div class="pdr"><input type="text" name=""></div></td>
+  </tr>
+  <tr>
+    <td><div class="pdl">联系人电话：</div><div class="pdr"><input type="text" name=""></div></td>
+    <td><div class="pdl">常住类型：</div><div class="pdr"><select><option>户籍</option><option>户籍</option></select></div></td>
+	<td><div class="pdl">民族：</div><div class="pdr"><select class="mz"><option class="few" value="0">汉族</option><option class="few" value="1">少数民族</option></select>
+	<input type="text" name="" class="tfew" palceholder="请输入民族名称"></div></td>
+  </tr>
+    <tr>
+    <td><div class="pdl">职业：</div><div class="pdr">
+	<select>
+	<option>国家机关、党群组织、企业、事业单位负责人</option><option>专业技术人员</option>
+	<option>办事人员和有关人员</option><option>商业、服务人员</option>
+	<option>农、林、牧、渔、水利业生产人员</option><option>生产、运输设备操作人员及有关人员</option>
+	<option>军人</option><option>不便分类的其他从业人员</option>
+	</select></div></td>
+    <td><div class="pdl">婚姻状况：</div><div class="pdr">
+	<select><option>未婚</option><option>已婚</option>
+	<option>丧偶</option><option>为说明婚姻状况</option></select>
+	</div></td>
+	<td><div class="pdl">血型：</div><div class="pdr">
+	<select><option>A</option><option>B</option><option>O</option>
+	<option>AB</option><option>不详</option>
+	</select></div></td>
+  </tr>
+      <tr>
+    <td><div class="pdl">RH阴性：</div><div class="pdr">
+	<select><option>否</option><option>是</option><option>不详</option>
+	</select></div></td>
+    <td><div class="pdl">文化程度：</div><div class="pdr">
+	<select><option>文盲及半文盲</option><option>小学</option>
+	<option>初中</option><option>高中/技校/中专</option>
+	<option>大学专科及以上</option><option>不详</option>
+</select></div></td>
+	<td></td>
+  </tr>
+      <tr>
+    <td><div class="pdl">暴露史：</div><div class="pdr">
+	<input type="radio" name="radio2" class="exhave" value="0">无&nbsp;&nbsp;
+	<input type="radio" name="radio2" class="exhave" value="1">有
+	<div class="expose"><input type="checkbox" name="">化学品<input type="checkbox" name="">毒物
+	<input type="checkbox" name="">射线
+</div></div></td>
+    <td><div class="pdl">遗传病史：</div><div class="pdr">
+	<input type="radio" name="radio3" class="genetic" value="0">无&nbsp;&nbsp;
+	<input type="radio" name="radio3" class="genetic" value="1">有
+	<input type="text" name="" class="tgene" placeholder="请输入遗传病">
+	</div></td>
+	<td><div class="pdl">药物过敏：</div><div class="pdr">
+	<input type="radio" name="radio1" class="allergy" value="0">无&nbsp;&nbsp;
+	 <input type="radio" name="radio1" class="allergy" value="1">有
+	<div class="tallergy">
+	<input type="checkbox" name="">青霉素<input type="checkbox" name="">磺胺
+	<input type="checkbox" name="">链霉素<input type="checkbox" name="">其他
+</div></div></td>
+</tr>
+
+    <tr>
+     	<td colspan="3"><span class="pull-left" style="margin-left:10px;"><button type="button" class="addblood">添加</button></span>
+		<div class="pullbl">
+		<div  class="blood_1"><div class="pdl">输血：</div><div class="">
+		<input type="radio" name="radio_1" value="0" class="rblood">无&nbsp;&nbsp;
+		<input type="radio" name="radio_1" value="1" class="rblood">有
+		 <span  class="tblood"><input type="text" name="" class="" placeholder="请输入输血的原因"><input id="calendar-inputField4" /><button id="calendar-trigger4">...</button></span></span> 
+		 </div>
+		</div>
+		</div>
+</td>
+  </tr>
+      <tr>
+     	<td colspan="3"><span class="pull-left" style="margin-left:10px;"><button type="button" class="addblo">添加</button></span>
+		<div class="pullbl">
+		<div  class="blo_1"><div class="pdl">手术：</div><div class="">
+		<input type="radio" name="rad_1" value="0" class="rblo">无&nbsp;&nbsp;
+		<input type="radio" name="rad_1" value="1" class="rblo">有
+		 <span  class="tblo"><input type="text" name="" class="" placeholder="请输入手术名称"><input id="calendar-inputField3" /><button id="calendar-trigger3">...</button></span></span> 
+</div>
+		</div>
+		</div>
+</td>
+  </tr>
+      <tr>
+     	<td colspan="3"><span class="pull-left" style="margin-left:10px;"><button type="button" class="addbloo">添加</button></span>
+		<div class="pullbl">
+		<div  class="bloo_1"><div class="pdl">外伤：</div><div class="">
+		<input type="radio" name="radi_1" value="0" class="rbloo">无&nbsp;&nbsp;
+		<input type="radio" name="radi_1" value="1" class="rbloo">有
+		 <span  class="tbloo"><input type="text" name="" class="" placeholder="请输入外伤名称"><input id="calendar-inputField5" /><button id="calendar-trigger5">...</button></span></span> 
+	  </div>
+		</div>
+		</div>
+</td>
+  </tr>
+  <tr>
+       <td colspan="3" class="payway">&nbsp;&nbsp;&nbsp;&nbsp;支付方式：
+	   <span><input type="checkbox">城镇职工基本医疗保险</span>
+	   <span><input type="checkbox">城镇居民基本医疗保险</span>
+	   <span><input type="checkbox">新型农村合医疗</span>
+	   <span><input type="checkbox">贫困救助</span>
+	   <span><input type="checkbox">商业医疗保险</span>
+	   <span><input type="checkbox">全公费</span>
+	   <span><input type="checkbox">全自费</span>
+	   <span><input type="checkbox">部分公费</span>
+	   <span><input type="checkbox" class="payother">其他<input type="text" name="" class="payo" placeholder="请填写其他支付方式"></span>
+</td>
+  <tr>
+       <td colspan="3" class="sick">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;疾病：
+	   <span><input type="checkbox">无</span>
+	   <span><input type="checkbox">高血压</span>
+	   <span><input type="checkbox">糖尿病</span>
+	   <span><input type="checkbox">冠心病</span>
+	   <span><input type="checkbox">慢性阻塞性肺疾病</span>
+	   <span><input type="checkbox"  class="badc">恶性肿瘤<span  class="badcan"><input type="text" name="" placeholder="请填写肿瘤类型"><input id="calendar-inputField" /><button id="calendar-trigger">...</button></span></span> 
+	   <span><input type="checkbox">脑卒中</span>
+	   <span><input type="checkbox">重性精神疾病</span>
+	   <span><input type="checkbox">结核病</span>
+	   <span><input type="checkbox">肝炎</span>
+	   <span><input type="checkbox">其他法定传染病</span>
+	   <span><input type="checkbox" class="pros">职业病
+	   <span  class="prosick"><input type="text" name="" class="" placeholder="请填写职业病类型"><input id="calendar-inputField1" /><button id="calendar-trigger1">...</button></span></span> 
+ </span>
+	   <span><input type="checkbox" class="ots">其他
+	    <span  class="otsick"><input type="text" name="" class="" placeholder="请填写其他疾病"><input id="calendar-inputField2" /><button id="calendar-trigger2">...</button></span></span> 
+</span>
+</td>
+  </tr>
+  <tr>
+       <td colspan="3" class="sick">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;父亲：
+	   <span><input type="checkbox">无</span>
+	   <span><input type="checkbox">高血压</span>
+	   <span><input type="checkbox">糖尿病</span>
+	   <span><input type="checkbox">冠心病</span>
+	   <span><input type="checkbox">慢性阻塞性肺疾病</span>
+	   <span><input type="checkbox" class="badc1">恶性肿瘤<input type="text" name="" class="badcan1" placeholder="请填写肿瘤类型"></span>
+	   <span><input type="checkbox">脑卒中</span>
+	   <span><input type="checkbox">重性精神疾病</span>
+	   <span><input type="checkbox">结核病</span>
+	   <span><input type="checkbox">肝炎</span>
+	   <span><input type="checkbox">其他法定传染病</span>
+	   <span><input type="checkbox" class="pros1">职业病<input type="text" name="" class="prosick1" placeholder="请填写职业病类型"></span>
+	   <span><input type="checkbox" class="ots1">其他<input type="text" name="" class="otsick1" placeholder="请填写其他疾病"></span>
+</td>
+  </tr>
+  <tr>
+       <td colspan="3" class="sick">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;母亲：
+	   <span><input type="checkbox">无</span>
+	   <span><input type="checkbox">高血压</span>
+	   <span><input type="checkbox">糖尿病</span>
+	   <span><input type="checkbox">冠心病</span>
+	   <span><input type="checkbox">慢性阻塞性肺疾病</span>
+	   <span><input type="checkbox" class="badc2">恶性肿瘤<input type="text" name="" class="badcan2" placeholder="请填写肿瘤类型"></span>
+	   <span><input type="checkbox">脑卒中</span>
+	   <span><input type="checkbox">重性精神疾病</span>
+	   <span><input type="checkbox">结核病</span>
+	   <span><input type="checkbox">肝炎</span>
+	   <span><input type="checkbox">其他法定传染病</span>
+	   <span><input type="checkbox" class="pros2">职业病<input type="text" name="" class="prosick2" placeholder="请填写职业病类型"></span>
+	   <span><input type="checkbox" class="ots2">其他<input type="text" name="" class="otsick2" placeholder="请填写其他疾病"></span>
+</td>
+  </tr>
+  <tr>
+       <td colspan="3" class="sick">&nbsp;&nbsp;兄弟姐妹：
+	   <span><input type="checkbox">无</span>
+	   <span><input type="checkbox">高血压</span>
+	   <span><input type="checkbox">糖尿病</span>
+	   <span><input type="checkbox">冠心病</span>
+	   <span><input type="checkbox">慢性阻塞性肺疾病</span>
+	   <span><input type="checkbox" class="badc3">恶性肿瘤<input type="text" name="" class="badcan3" placeholder="请填写肿瘤类型"></span>
+	   <span><input type="checkbox">脑卒中</span>
+	   <span><input type="checkbox">重性精神疾病</span>
+	   <span><input type="checkbox">结核病</span>
+	   <span><input type="checkbox">肝炎</span>
+	   <span><input type="checkbox">其他法定传染病</span>
+	   <span><input type="checkbox" class="pros3">职业病<input type="text" name="" class="prosick3" placeholder="请填写职业病类型"></span>
+	   <span><input type="checkbox" class="ots3">其他<input type="text" name="" class="otsick3" placeholder="请填写其他疾病"></span>
+</td>
+  </tr>
+  <tr>
+       <td colspan="3" class="sick">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;子女：
+	   <span><input type="checkbox">无</span>
+	   <span><input type="checkbox">高血压</span>
+	   <span><input type="checkbox">糖尿病</span>
+	   <span><input type="checkbox">冠心病</span>
+	   <span><input type="checkbox">慢性阻塞性肺疾病</span>
+	   <span><input type="checkbox" class="badc4">恶性肿瘤<input type="text" name="" class="badcan4" placeholder="请填写肿瘤类型"></span>
+	   <span><input type="checkbox">脑卒中</span>
+	   <span><input type="checkbox">重性精神疾病</span>
+	   <span><input type="checkbox">结核病</span>
+	   <span><input type="checkbox">肝炎</span>
+	   <span><input type="checkbox">其他法定传染病</span>
+	   <span><input type="checkbox" class="pros4">职业病<input type="text" name="" class="prosick4" placeholder="请填写职业病类型"></span>
+	   <span><input type="checkbox" class="ots4">其他<input type="text" name="" class="otsick4" placeholder="请填写其他疾病"></span>
+</td>
+  </tr>
+       <td colspan="3" class="disabled">&nbsp;&nbsp;&nbsp;&nbsp;残疾情况：
+	   <span><input type="checkbox">无残疾</span>
+	   <span><input type="checkbox">视力残疾</span>
+	   <span><input type="checkbox">听力残疾</span>
+	   <span><input type="checkbox">言语残疾</span>
+	   <span><input type="checkbox">肢体残疾</span>
+	   <span><input type="checkbox">智力残疾</span>
+	   <span><input type="checkbox" class="otdis">其他残疾<input type="text" name="" class="otdisabled" placeholder="请填写其他残疾类型"></span>
+</td>
+  <tr> <td><div class="pdl">厨房排风设施：</div><div class="pdr">
+		<select><option>无</option><option>油烟机</option><option>换气扇</option><option>烟囱</option>
+	</select></div></td>
+	<td><div class="pdl">燃料类型：</div><div class="pdr">
+		<select><option>液化气</option><option>煤</option><option>天然气</option>
+		<select><option>沼气</option><option>柴火</option><option>其他</option>
+	</select></div></td>
+       	<td><div class="pdl">饮水：</div><div class="pdr">
+		<select><option>自来水</option><option>经净化过滤的水</option>
+		<option>井水</option><option>河湖水</option><option>塘水</option><option>其他</option>
+	</select></div></td>
+    	
+  </tr>
+    <tr>
+ <td><div class="pdl">厕所：</div><div class="pdr">
+		<select><option>卫生厕所</option><option>一格或两格粪池式</option>
+		<option>马桶</option><option>露天粪坑</option><option>简易棚厕</option>
+	</select></div></td>
+		<td><div class="pdl">禽畜栏：</div><div class="pdr">
+		<select><option>单设</option><option>室内</option><option>室外</option>
+	</select></div></td>
+	<td></td>
+	</tr>
+	<tr>  
+  </tbody>
+</table>
+</form>
+</div>
+</body>
+</html>

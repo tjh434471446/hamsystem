@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<session-factory>
+
+	<!--1、数据连接信息-->
+	<property name="dialect">
+		org.hibernate.dialect.MySQLDialect
+	</property>
+	<!--数据库连接池配好了
+		<property name="connection.driver_class">com.microsoft.jdbc.sqlserver.SQLServerDriver</property>
+		<property name="connection.url">jdbc:microsoft:sqlserver://localhost:1433;databaseName=HAMSystem</property>
+		<property name="connection.username">sa</property>
+		<property name="connection.password">200802</property>
+	-->
+
+
+	<!-- 其他配置 -->
+
+	<!--自动建表 Echo all executed SQL to stdout -->
+	<property name="show_sql">true</property>
+
+	<!-- Drop and re-create the database schema on startup -->
+	<property name="hbm2ddl.auto">update</property>
+
+	<!-- 3、导入映射文件
+		` <mapping resource="cn/User.hbm.xml"/> -->
+	<mapping resource="com/uestc/hams/entity/Role.hbm.xml" />
+	<mapping resource="com/uestc/hams/entity/Privilege.hbm.xml" />
+	<mapping resource="com/uestc/hams/entity/User.hbm.xml" />
+	<mapping resource="com/uestc/hams/entity/DistrictIns.hbm.xml" />
+	<mapping resource="com/uestc/hams/entity/ResidentArchive.hbm.xml" />
+	<mapping resource="com/uestc/hams/entity/PhyExam.hbm.xml" />
+	<mapping resource="com/uestc/hams/entity/PublicIns.hbm.xml" />
+	<mapping resource="com/uestc/hams/entity/BloodPressure.hbm.xml"/>
+	<mapping resource="com/uestc/hams/entity/HospitalHistory.hbm.xml"/>
+	<mapping resource="com/uestc/hams/entity/FamilyDisHistory.hbm.xml"/>
+	<mapping resource="com/uestc/hams/entity/Medication.hbm.xml"/>
+	<mapping resource="com/uestc/hams/entity/MessageText.hbm.xml"/>
+    <!--  by yang -->
+	<mapping resource="com/uestc/hams/entity/Family.hbm.xml"/> 
+ 	<mapping resource="com/uestc/hams/entity/FamilyIssue.hbm.xml"/> 
+	<mapping resource="com/uestc/hams/entity/FamilyCategoryEvaluate.hbm.xml"/> 
+
+</session-factory>
+
+</hibernate-configuration>

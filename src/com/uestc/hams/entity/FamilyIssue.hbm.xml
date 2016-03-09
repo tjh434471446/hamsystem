@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+      <hibernate-mapping package="com.uestc.hams.entity">
+      <class name="FamilyIssue" table="hams_familyIssue">
+      
+      <id name="id">
+      <generator class="native"></generator> </id>
+      
+      <!--  family属性 ，本类与Family为多对一映射 -->
+<!--       <many-to-one name="family" class="Family" column="familyId" insert="false" update="false"></many-to-one> -->
+      
+      <property name="happenedDate"></property>
+      <property name="overDate"></property>
+      <property name="recordDate"></property>
+      <property name="remarks"></property>
+      <property name="eventName"></property>
+      
+      <!-- doctor属性 ，本类与User为多对一关系 -->
+      <many-to-one name="doctor" class="User" column="doctorId" insert="false" update="false"></many-to-one>
+      </class>
+      
+      
+
+          </hibernate-mapping>

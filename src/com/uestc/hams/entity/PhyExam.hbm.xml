@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.uestc.hams.entity">
+
+	<class name="PhyExam" table="hams_phyExam">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="symptom1" length="100"/>
+		<property name="symptom2" length="100"/>
+		<property name="temper" length="100"/>
+		<property name="pulseRate" length="100"/>
+		<property name="breathe" length="100"/>
+		<property name="leftBpss" length="100"/>
+		<property name="leftBpsz" length="100"/>
+		<property name="rightBpss" length="100"/>
+		<property name="rightBpsz" length="100"/>
+		<property name="height" length="100"/>
+		<property name="weight" length="100"/>
+		<property name="waist" length="100"/>
+		<property name="BMI" length="100"/>
+		<property name="elderHealth" length="100"/>
+		<property name="elderSelfHelp" length="100"/>
+		<property name="elderPerceive1" length="100"/>
+		<property name="elderPerceive2" length="100"/>
+		<property name="elderEmotion1" length="100"/>
+		<property name="elderEmotion2" length="100"/>
+		<property name="exerFre" length="100"/>
+		<property name="exerTime" length="100"/>
+		<property name="insTime" length="100"/>
+		<property name="exerWay" length="100"/>
+		<property name="diet" length="100"/>
+		<property name="smoke" length="100"/>
+		<property name="smokeDay" length="100"/>
+		<property name="smokeStart" length="100"/>
+		<property name="smokeEnd" length="100"/>
+		<property name="drinkFre" length="100"/>
+		<property name="drinkDay" length="100"/>
+		<property name="abstinence1" length="100"/>
+		<property name="abstinence2" length="100"/>
+		<property name="abstinAge" length="100"/>
+		<property name="temulence" length="100"/>
+		<property name="drinkType1" length="100"/>
+		<property name="drinkType2" length="100"/>
+		<property name="lip" length="100"/>
+		<property name="dentition" length="100"/>
+		<property name="pharyngeal" length="100"/>
+		<property name="leftVision" length="100"/>
+		<property name="rightVision" length="100"/>
+		<property name="leftCav" length="100"/>
+		<property name="rightCav" length="100"/>
+		<property name="hearing" length="100"/>
+		<property name="motorFunction" length="100"/>
+		<property name="eyebase1" length="100"/>
+		<property name="eyebase2" length="100"/>
+		<property name="skin1" length="100"/>
+		<property name="skin2" length="100"/>
+		<property name="sclera1" length="100"/>
+		<property name="sclera2" length="100"/>
+		<property name="lymph1" length="100"/>
+		<property name="lymph2" length="100"/>
+		<property name="barrelChest" length="100"/>
+		<property name="breathSound1" length="100"/>
+		<property name="breathSound2" length="100"/>
+		<property name="rale1" length="100"/>
+		<property name="rale2" length="100"/>
+		<property name="heartRate" length="100"/>
+		<property name="heartRhythm" length="100"/>
+		<property name="murmur1" length="100"/>
+		<property name="murmur2" length="100"/>
+		<property name="tendness1" length="100"/>
+		<property name="tendness2" length="100"/>
+		<property name="mass1" length="100"/>
+		<property name="mass2" length="100"/>
+		<property name="hepato1" length="100"/>
+		<property name="hepato2" length="100"/>
+		<property name="splenauxe1" length="100"/>
+		<property name="splenauxe2" length="100"/>
+		<property name="shiftDull1" length="100"/>
+		<property name="shiftDull2" length="100"/>
+		<property name="legEdema" length="100"/>
+		<property name="footPulse" length="100"/>
+		<property name="dre1" length="100"/>
+		<property name="dre2" length="100"/>
+		<property name="breast1" length="100"/>
+		<property name="breast2" length="100"/>
+		<property name="vulva1" length="100"/>
+		<property name="vulva2" length="100"/>
+		<property name="vagina1" length="100"/>
+		<property name="vagina2" length="100"/>
+		<property name="cervix1" length="100"/>
+		<property name="cervix2" length="100"/>
+		<property name="corpus1" length="100"/>
+		<property name="corpus2" length="100"/>
+		<property name="annex1" length="100"/>
+		<property name="annex2" length="100"/>
+		<property name="phyExamElse" length="100"/>
+		<property name="fbg1" length="100"/>
+		<property name="fbg2" length="100"/>
+		<property name="ghb" length="100"/>
+		<property name="hbsag" length="100"/>
+		<property name="hgb" length="100"/>
+		<property name="leu" length="100"/>
+		<property name="plt" length="100"/>
+		<property name="cbcElse" length="100"/>
+		<property name="pro" length="100"/>
+		<property name="uglu" length="100"/>
+		<property name="ket" length="100"/>
+		<property name="bld" length="100"/>
+		<property name="urineElse" length="100"/>
+		<property name="mau" length="100"/>
+		<property name="bloodStool" length="100"/>
+		<property name="sgpt" length="100"/>
+		<property name="sgot" length="100"/>
+		<property name="alb" length="100"/>
+		<property name="tbil" length="100"/>
+		<property name="dbil" length="100"/>
+		<property name="scr" length="100"/>
+		<property name="bun" length="100"/>
+		<property name="potassium" length="100"/>
+		<property name="sodium" length="100"/>
+		<property name="chol" length="100"/>
+		<property name="trig" length="100"/>
+		<property name="ldlc" length="100"/>
+		<property name="hdlc" length="100"/>
+		<property name="xray1" length="100"/>
+		<property name="xray2" length="100"/>
+		<property name="bultra1" length="100"/>
+		<property name="bultra2" length="100"/>
+		<property name="ecg1" length="100"/>
+		<property name="ecg2" length="100"/>
+		<property name="smear1" length="100"/>
+		<property name="smear2" length="100"/>
+		<property name="auxiExamElse" length="100"/>
+		<property name="mildPhy" length="100"/>
+		<property name="faintPhy" length="100"/>
+		<property name="yangPhy" length="100"/>
+		<property name="yinPhy" length="100"/>
+		<property name="tanPhy" length="100"/>
+		<property name="muggyPhy" length="100"/>
+		<property name="xueyuPhy" length="100"/>
+		<property name="qiyuPhy" length="100"/>
+		<property name="tebingPhy" length="100"/>
+		<property name="cerebroDis1" length="100"/>
+		<property name="cerebroDis2" length="100"/>
+		<property name="kidneyDis1" length="100"/>
+		<property name="kidneyDis2" length="100"/>
+		<property name="heartDis1" length="100"/>
+		<property name="heartDis2" length="100"/>
+		<property name="vesselDis1" length="100"/>
+		<property name="vesselDis2" length="100"/>
+		<property name="eyeDis1" length="100"/>
+		<property name="eyeDis2" length="100"/>
+		<property name="nervSysDis1" length="100"/>
+		<property name="nervSysDis2" length="100"/>
+		<property name="elseSysDis1" length="100"/>
+		<property name="elseSysDis2" length="100"/>
+		
+		
+		<!-- doctor属性，本类与User的关系是多对一 -->
+		<many-to-one name="doctor" class="User" column="doctorId"></many-to-one>
+		
+		<property name="examDate" length="100"/>
+		
+		<!-- ras属性，本类与ResidentArchive关系为多对一  级联删除：当健康档案删除的时候相应的健康体检记录也删除-->
+		<many-to-one name="residentArchive" class="ResidentArchive" column="residentArchiveId" cascade="delete"></many-to-one>
+		
+		<!-- recoder属性，本类与User的关系为多对一 -->
+		<many-to-one name="recorder" class="User" column="recorderId"></many-to-one>
+		
+		<!-- hospitalHistorys属性，本类与HospitalHistory的关系为一对多 -->
+		<set name="hospitalHistorys" lazy="false">
+			<key column="phyExamHosId"></key>
+			<one-to-many class="HospitalHistory"/>
+		</set>
+		
+		<!-- familyDisHistorys属性，本类与FamilyDisHistory的关系为一对多 -->
+		<set name="familyDisHistorys" lazy="false">
+			<key column="phyExamFamId"></key>
+			<one-to-many class="FamilyDisHistory"/>
+		</set>
+		
+		<!-- medications属性，本类与Medication的关系为一对多 -->
+		<set name="medications" lazy="false">
+			<key column="phyExamId"></key>
+			<one-to-many class="Medication"/>
+		</set>
+	</class>
+	
+</hibernate-mapping>

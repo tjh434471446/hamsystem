@@ -1,0 +1,213 @@
+body{
+color:#666666;
+font-size:12px !important;
+}
+.con-content{
+width:1300px;
+margin-left:30px;
+}
+/*index菜单栏*/
+.menu-header{
+height:30px;
+width:100%;
+background-color:#91c0e3;
+}
+.menu-header .btn{
+padding:0px;}
+.li-menu{
+float:left;
+list-style-type:none;
+line-height:30px;
+padding-left:10px;
+padding-right:10px;
+border-right:solid 1px #fff;
+}
+.white{
+color:#fff;
+}
+.dropdown-menu>li>a{
+padding:0px;
+width:140px;}
+.dropdown-submenu {
+            position: relative;
+        }
+        .dropdown-submenu > .dropdown-menu {
+            top: 0;
+            left:158px;
+            -webkit-border-radius: 0 6px 6px 6px;
+            -moz-border-radius: 0 6px 6px;
+        }
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+        }
+        .dropdown-submenu > a:after {
+            display: block;
+            content: " ";
+            float: right;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-left-color: #ccc;
+			
+        }
+        .dropdown-submenu:hover > a:after {
+            border-left-color: #fff;
+        }
+        .dropdown-submenu.pull-left {
+            float: none;
+        }
+        .dropdown-submenu.pull-left > .dropdown-menu {
+            left: -100%;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+        }
+.contain-content{
+margin-top:10px;
+margin-left:10px;
+margin-right:10px;
+}
+.top-name{
+height:25px;
+background-color:#ececec;
+width:100%;
+}
+.top-name .pull-right{
+color:blue;
+margin-right:10px;
+}
+.archives-self{
+padding-left:0px !important;
+padding-right:0px !important;
+border:solid 1px #ccc;
+border-left:none;
+}
+.nopadding{
+margin-left:-15px;
+margin-right:-15px;
+}
+.operate-bnt{
+height:30px;
+margin:10px 0px 30px 10px;
+}
+.table-arch{
+margin:0px 10px;
+}
+.table-arch table thead{
+font-weight:900;
+}
+/*主页col-sm-2*/
+.per-header{
+height:25px;
+background-color:#ececec;
+}
+.person form{
+height:275px;
+border-bottom:solid 1px #ccc;
+margin-left:-15px;
+margin-right:-15px;
+}
+.person form input{
+margin-top:10px;
+margin-left:20px;
+}
+.searchname{
+margin-right:20px;
+}
+.searchname select{
+padding:3px 5px;
+}
+.searchpart{
+margin-left:-15px;
+margin-right:-15px;
+}
+.farhide{
+display:none;}
+.fasthide{
+display:block;}
+.farform{
+padding-left:20px;
+}
+.farform input{
+margin-top:10px;
+width:100px;
+}
+.farform select{
+margin-top:10px;
+}
+.farname{
+margin-left:15px;
+}
+.farcard{
+margin-bottom:20px;
+}
+.fastform{
+padding-left:20px;
+}
+.fastform input{
+margin-top:10px;
+width:100px;
+}
+.fastform select{
+margin-top:10px;
+}
+.fastname{
+margin-left:15px;
+}
+.fastsex{
+margin-left:15px;
+margin-bottom:20px;
+}
+/*个人基本信息selfmessage页面*/
+.message-head{
+padding:5px 0px;
+background-color:#91c0e3;
+margin-bottom:10px;
+
+}
+.message-head span{
+padding-left:10px;
+padding-right:10px;
+}
+.tbhead{
+text-align:center;
+background-color:#ececec;
+}
+.mtable tr td{
+height:30px;
+padding:2px 0px !important;
+
+}
+.mtable tbody tr td{
+width:33.33%;}
+.rpoint{
+color:red;
+}
+.pdl{
+width:100px;
+float:left;
+text-align:right;
+}
+.pdr{
+width:275px;
+float:left;}
+.redc{
+color:red;
+}
+.payway span{
+margin-left:7px;
+}
+.sick span{
+margin-left:7px;
+}
+.expose,.tallergy,.tgene,.tfew,.payo,.badcan,.prosick,.otsick,.badcan1,.prosick1,.otsick1,.badcan2,.prosick2,.otsick2,.badcan3,.prosick3,.otsick3,.badcan4,.prosick4,.otsick4,.otdisabled,.tblood,.tbloo,.tblo{
+display:none;
+}
+.addblood,.addbloo,.addblo{
+margin-left:20px;}
+.pullbl{
+width:1200px;
+}
+
+
